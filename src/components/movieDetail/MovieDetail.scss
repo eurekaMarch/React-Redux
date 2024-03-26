@@ -1,0 +1,13 @@
+.movie-detail-con {
+  display: flex;
+}
+
+.movie-detail-img,
+.movie-detail-info {
+  margin: 2rem;
+}
+
+.movie-detail-info p {
+  text-align: justify;
+  text-indent: 50px;
+}

@@ -5,8 +5,12 @@ import {
   Route,
 } from "react-router-dom";
 import "./App.css";
+import { Provider } from "react-redux";
+import Store from "./store/Store";
 import Home from "./components/home/Home";
 import Header from "./components/header/Header";
+import MovieDetail from "./components/movieDetail/MovieDetail";
+import Footer from "./components/footer/Footer";
 import About from "./components/About";
 import Contact from "./components/Contact";
 
@@ -15,6 +19,8 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<Header />}>
         <Route index element={<Home />} />
+        {/* <Route path="/movie" element={<MovieDetail />} /> */}
+        <Route path="/movie/:id" element={<MovieDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Route>
@@ -22,7 +28,10 @@ function App() {
   );
   return (
     <div>
-      <RouterProvider router={router} />
+      <Provider store={Store}>
+        <RouterProvider router={router} />
+        <Footer />
+      </Provider>
     </div>
   );
 }
