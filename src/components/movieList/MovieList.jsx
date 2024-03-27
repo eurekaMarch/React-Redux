@@ -3,12 +3,12 @@ import MovieCard from "../movieCard/MovieCard";
 import { useSelector } from "react-redux";
 
 function MovieList() {
-  const { movies } = useSelector((state) => state.movies);
+  const movieListing = useSelector((state) => state.movieListing.allMovie);
 
   return (
     <div className="movie-container">
-      {movies &&
-        movies.map((movie) => {
+      {movieListing &&
+        movieListing.map((movie) => {
           return <MovieCard key={movie.imdbID} movie={movie} />;
         })}
     </div>
