@@ -11,6 +11,7 @@ import Home from "./components/home/Home";
 import Header from "./components/header/Header";
 import MovieDetail from "./components/movieDetail/MovieDetail";
 import Footer from "./components/footer/Footer";
+import PageNotFound from "./components/pageNotFound/PageNotFound";
 import About from "./components/About";
 import Contact from "./components/Contact";
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/movie/:id" element={<MovieDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<PageNotFound />} />
       </Route>
     )
   );
